@@ -13,14 +13,12 @@ const void* _ARSEGMENTPAGE_CURRNTPAGE_SCROLLVIEWOFFSET = &_ARSEGMENTPAGE_CURRNTP
 
 @interface ARSegmentPageController ()
 
-@property (nonatomic, strong) ARSegmentPageHeader *headerView;
+@property (nonatomic, strong) UIView<ARSegmentPageControllerHeaderProtocol> *headerView;
 @property (nonatomic, strong) ARSegmentView *segmentView;
 @property (nonatomic, strong) NSMutableArray *controllers;
 @property (nonatomic, assign) CGFloat segmentToInset;
 @property (nonatomic, weak) UIViewController<ARSegmentControllerDelegate> *currentDisplayController;
 @property (nonatomic, strong) NSLayoutConstraint *headerHeightConstraint;
-
-@property (nonatomic, strong) UIView *headerForgoundView;
 
 @end
 
@@ -63,9 +61,9 @@ const void* _ARSEGMENTPAGE_CURRNTPAGE_SCROLLVIEWOFFSET = &_ARSEGMENTPAGE_CURRNTP
 
 #pragma mark - override methods
 
--(UIView *)customHeaderForgroudView
+-(UIView<ARSegmentPageControllerHeaderProtocol> *)customHeaderView
 {
-    return nil;
+    return [[ARSegmentPageHeader alloc] init];
 }
 
 #pragma mark - private methdos
@@ -77,13 +75,10 @@ const void* _ARSEGMENTPAGE_CURRNTPAGE_SCROLLVIEWOFFSET = &_ARSEGMENTPAGE_CURRNTP
         self.view.preservesSuperviewLayoutMargins = YES;   
     }
     self.extendedLayoutIncludesOpaqueBars = NO;
-    self.headerView = [[ARSegmentPageHeader alloc] init];
+    self.headerView = [self customHeaderView];
+    self.headerView.clipsToBounds = YES;
     [self.view addSubview:self.headerView];
     
-    self.headerForgoundView = [self customHeaderForgroudView];
-    if (self.headerForgoundView != nil) {
-        [self.headerView addSubview:self.headerForgoundView];
-    }
     
     self.segmentView = [[ARSegmentView alloc] init];
     [self.segmentView.segmentControl addTarget:self action:@selector(segmentControlDidChangedValue:) forControlEvents:UIControlEventValueChanged];
@@ -122,15 +117,6 @@ const void* _ARSEGMENTPAGE_CURRNTPAGE_SCROLLVIEWOFFSET = &_ARSEGMENTPAGE_CURRNTP
      [self.view addConstraint:[NSLayoutConstraint constraintWithItem:self.headerView attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeTop multiplier:1 constant:0]];
     [self.view addConstraint:[NSLayoutConstraint constraintWithItem:self.headerView attribute:NSLayoutAttributeRight relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeRight multiplier:1 constant:0]];
     
-    if (self.headerForgoundView != nil) {
-        self.headerForgoundView.translatesAutoresizingMaskIntoConstraints = NO;
-        [self.headerView addConstraint:[NSLayoutConstraint constraintWithItem:self.headerForgoundView attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:self.headerView attribute:NSLayoutAttributeLeft multiplier:1 constant:0]];
-        [self.headerView addConstraint:[NSLayoutConstraint constraintWithItem:self.headerForgoundView attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self.headerView attribute:NSLayoutAttributeTop multiplier:1 constant:0]];
-        [self.headerView addConstraint:[NSLayoutConstraint constraintWithItem:self.headerForgoundView attribute:NSLayoutAttributeRight relatedBy:NSLayoutRelationEqual toItem:self.headerView attribute:NSLayoutAttributeRight multiplier:1 constant:0]];
-        [self.headerView addConstraint:[NSLayoutConstraint constraintWithItem:self.headerForgoundView attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:self.headerView attribute:NSLayoutAttributeBottom
-                                                                   multiplier:1 constant:0]];
-    }
-    
     //segment
     self.segmentView.translatesAutoresizingMaskIntoConstraints = NO;
     [self.view addConstraint:[NSLayoutConstraint constraintWithItem:self.segmentView attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeLeft multiplier:1 constant:0]];
@@ -162,6 +148,8 @@ const void* _ARSEGMENTPAGE_CURRNTPAGE_SCROLLVIEWOFFSET = &_ARSEGMENTPAGE_CURRNTP
         }
         
         [scrollView setContentInset:UIEdgeInsetsMake(topInset, 0, bottomInset, 0)];
+        //fixed first time don't show header view
+        [scrollView setContentOffset:CGPointMake(0, -self.headerHeight-self.segmentHeight)];
         
         [self.view addConstraint:[NSLayoutConstraint constraintWithItem:pageView attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeTop multiplier:1 constant:0]];
         

@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "ARSegmentControllerDelegate.h"
 #import "ARSegmentPageHeader.h"
+#import "ARSegmentPageControllerHeaderProtocol.h"
 
 @interface ARSegmentPageController : UIViewController
 
@@ -18,10 +19,10 @@
 
 @property (nonatomic, assign, readonly) CGFloat segmentToInset;
 
-@property (nonatomic, strong, readonly) ARSegmentPageHeader *headerView;
+@property (nonatomic, strong, readonly) UIView<ARSegmentPageControllerHeaderProtocol> *headerView;
 
 -(instancetype)initWithControllers:(UIViewController<ARSegmentControllerDelegate> *)controller,... NS_DESIGNATED_INITIALIZER NS_REQUIRES_NIL_TERMINATION;
 
--(UIView *)customHeaderForgroudView;
+-(UIView<ARSegmentPageControllerHeaderProtocol> *)customHeaderView;
 
 @end

@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ARSegmentPageControllerHeaderProtocol.h"
 
-@interface ARSegmentPageHeader : UIView
+@interface ARSegmentPageHeader : UIView<ARSegmentPageControllerHeaderProtocol>
 
 @property (nonatomic, strong) UIImageView *imageView;
 
