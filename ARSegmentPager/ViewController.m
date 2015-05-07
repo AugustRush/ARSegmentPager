@@ -14,6 +14,8 @@
 @interface ViewController ()<ARSegmentControllerDelegate>
 - (IBAction)presentPageController:(id)sender;
 
+@property (nonatomic, strong) ARSegmentPageController *pager;
+
 @end
 
 @implementation ViewController
@@ -21,8 +23,23 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-//    [self.navigationController.navigationBar setBackgroundImage:nil forBarPosition:UIBarPositionAny barMetrics:UIBarMetricsDefault];
-    // Do any additional setup after loading the view, typically from a nib.
+    TableViewController *table = [[TableViewController alloc] initWithNibName:@"TableViewController" bundle:nil];
+    CollectionViewController *collectionView = [[CollectionViewController alloc] initWithNibName:@"CollectionViewController" bundle:nil];
+    
+    TableViewController *table1 = [[TableViewController alloc] initWithNibName:@"TableViewController" bundle:nil];
+    ARSegmentPageController *pager = [[ARSegmentPageController alloc] initWithControllers:collectionView,table,table1,nil];
+
+    self.pager = pager;
+    
+    [self.pager addObserver:self forKeyPath:@"segmentToInset" options:NSKeyValueObservingOptionNew context:NULL];
+    
+}
+
+
+-(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
+{
+    CGFloat topInset = [change[NSKeyValueChangeNewKey] floatValue];
+    NSLog(@"top inset is %f",topInset);
 }
 
 - (void)didReceiveMemoryWarning {
@@ -37,14 +54,7 @@
 
 - (IBAction)presentPageController:(id)sender {
     
-    TableViewController *table = [[TableViewController alloc] initWithNibName:@"TableViewController" bundle:nil];
-    CollectionViewController *collectionView = [[CollectionViewController alloc] initWithNibName:@"CollectionViewController" bundle:nil];
-    
-    ViewController *common = [[ViewController alloc] init];
-    common.view.backgroundColor = [UIColor redColor];
-    
-    ARSegmentPageController *pageer = [[ARSegmentPageController alloc] initWithControllers:collectionView,table,common,nil];
-    
-    [self.navigationController pushViewController:pageer animated:YES];
+
+    [self.navigationController pushViewController:self.pager animated:YES];
 }
 @end
