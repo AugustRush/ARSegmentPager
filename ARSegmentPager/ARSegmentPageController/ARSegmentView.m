@@ -35,7 +35,7 @@
     [self addSubview:self.segmentControl];
     
     _bottomLine = [[UIView alloc] init];
-    _bottomLine.backgroundColor = defBorderGrayColor;
+    _bottomLine.backgroundColor = [UIColor lightGrayColor];
     [self addSubview:_bottomLine];
 
     self.segmentControl.translatesAutoresizingMaskIntoConstraints = NO;
