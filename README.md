@@ -1,8 +1,7 @@
-# ARSegmentPager
+# ARSegmentPager(snapshots in my app)
 
-![](https://github.com/AugustRush/ARSegmentPager/blob/master/IMG_0083.PNG)
-
-![](https://github.com/AugustRush/ARSegmentPager/blob/master/IMG_0085.PNG)
+<img src="https://github.com/AugustRush/ARSegmentPager/blob/master/IMG_0083.PNG" width="320">
+<img src="https://github.com/AugustRush/ARSegmentPager/blob/master/IMG_0085.PNG" width="320">
 
 # Usage
 
