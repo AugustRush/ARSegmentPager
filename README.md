@@ -14,3 +14,7 @@ just drag the 'ARSegmentPageController' document to your project.
 * Cocoapods:
 
 pod 'ARSegmentPager', :git => 'https://github.com/AugustRush/ARSegmentPager.git'
+
+# Supplement
+
+* if you have any question or idea about this control, send email to me 'liupingwei30@gmail.com'.
