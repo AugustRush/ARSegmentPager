@@ -37,7 +37,6 @@
     ARSegmentPageController *pager = [[ARSegmentPageController alloc] initWithControllers:collectionView,table,table1,nil];
     pager.segmentMiniTopInset = 64;
     self.pager = pager;
-    self.pager.title = @"ARSegmentPager";
     
     [self.pager addObserver:self forKeyPath:@"segmentToInset" options:NSKeyValueObservingOptionNew context:NULL];
     
@@ -55,8 +54,10 @@
     NSLog(@"top inset is %f",topInset);
 
     if (topInset <= self.pager.segmentMiniTopInset) {
+            self.pager.title = @"ARSegmentPager";
         self.pager.headerView.imageView.image = self.blurImage;
     }else{
+            self.pager.title = nil;
         self.pager.headerView.imageView.image = self.defaultImage;
     }
 }
