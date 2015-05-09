@@ -22,6 +22,8 @@
 		97C9BCDC1AC6E44E00C23EE5 /* TableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 97C9BCDA1AC6E44E00C23EE5 /* TableViewController.xib */; };
 		97C9BCE01AC6E47200C23EE5 /* CollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 97C9BCDE1AC6E47200C23EE5 /* CollectionViewController.m */; };
 		97C9BCE11AC6E47200C23EE5 /* CollectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 97C9BCDF1AC6E47200C23EE5 /* CollectionViewController.xib */; };
+		97C9E8EB1AFE3E9C00142F24 /* NavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 97C9E8EA1AFE3E9C00142F24 /* NavigationViewController.m */; };
+		97C9E8EE1AFE43BB00142F24 /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 97C9E8ED1AFE43BB00142F24 /* UIImage+ImageEffects.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +64,10 @@
 		97C9BCDD1AC6E47200C23EE5 /* CollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewController.h; sourceTree = "<group>"; };
 		97C9BCDE1AC6E47200C23EE5 /* CollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionViewController.m; sourceTree = "<group>"; };
 		97C9BCDF1AC6E47200C23EE5 /* CollectionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CollectionViewController.xib; sourceTree = "<group>"; };
+		97C9E8E91AFE3E9C00142F24 /* NavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationViewController.h; sourceTree = "<group>"; };
+		97C9E8EA1AFE3E9C00142F24 /* NavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationViewController.m; sourceTree = "<group>"; };
+		97C9E8EC1AFE43BB00142F24 /* UIImage+ImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageEffects.h"; sourceTree = "<group>"; };
+		97C9E8ED1AFE43BB00142F24 /* UIImage+ImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageEffects.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +129,10 @@
 				97C9BCAB1AC6B9DA00C23EE5 /* ViewController.h */,
 				97C9BCAC1AC6B9DA00C23EE5 /* ViewController.m */,
 				97C9BCAE1AC6B9DA00C23EE5 /* Main.storyboard */,
+				97C9E8EC1AFE43BB00142F24 /* UIImage+ImageEffects.h */,
+				97C9E8ED1AFE43BB00142F24 /* UIImage+ImageEffects.m */,
+				97C9E8E91AFE3E9C00142F24 /* NavigationViewController.h */,
+				97C9E8EA1AFE3E9C00142F24 /* NavigationViewController.m */,
 				97C9BCD81AC6E44E00C23EE5 /* TableViewController.h */,
 				97C9BCD91AC6E44E00C23EE5 /* TableViewController.m */,
 				97C9BCDA1AC6E44E00C23EE5 /* TableViewController.xib */,
@@ -272,8 +282,10 @@
 				973EC05C1AC93F59000544BA /* ARSegmentView.m in Sources */,
 				97C9BCAA1AC6B9DA00C23EE5 /* AppDelegate.m in Sources */,
 				97C9BCA71AC6B9DA00C23EE5 /* main.m in Sources */,
+				97C9E8EE1AFE43BB00142F24 /* UIImage+ImageEffects.m in Sources */,
 				97C9BCDB1AC6E44E00C23EE5 /* TableViewController.m in Sources */,
 				973EC05A1AC93F59000544BA /* ARSegmentPageController.m in Sources */,
+				97C9E8EB1AFE3E9C00142F24 /* NavigationViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

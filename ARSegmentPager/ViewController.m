@@ -10,11 +10,15 @@
 #import "ARSegmentPageController.h"
 #import "TableViewController.h"
 #import "CollectionViewController.h"
+#import "UIImage+ImageEffects.h"
 
 @interface ViewController ()<ARSegmentControllerDelegate>
 - (IBAction)presentPageController:(id)sender;
 
 @property (nonatomic, strong) ARSegmentPageController *pager;
+
+@property (nonatomic, strong) UIImage *defaultImage;
+@property (nonatomic, strong) UIImage *blurImage;
 
 @end
 
@@ -23,16 +27,25 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.defaultImage = [UIImage imageNamed:@"listdownload.jpg"];
+    self.blurImage = [[UIImage imageNamed:@"listdownload.jpg"] applyDarkEffect];
+    
     TableViewController *table = [[TableViewController alloc] initWithNibName:@"TableViewController" bundle:nil];
     CollectionViewController *collectionView = [[CollectionViewController alloc] initWithNibName:@"CollectionViewController" bundle:nil];
     
     TableViewController *table1 = [[TableViewController alloc] initWithNibName:@"TableViewController" bundle:nil];
     ARSegmentPageController *pager = [[ARSegmentPageController alloc] initWithControllers:collectionView,table,table1,nil];
-
+    pager.segmentMiniTopInset = 64;
     self.pager = pager;
+    self.pager.title = @"ARSegmentPager";
     
     [self.pager addObserver:self forKeyPath:@"segmentToInset" options:NSKeyValueObservingOptionNew context:NULL];
     
+}
+
+-(UIStatusBarStyle)preferredStatusBarStyle
+{
+    return UIStatusBarStyleLightContent;
 }
 
 
@@ -40,6 +53,12 @@
 {
     CGFloat topInset = [change[NSKeyValueChangeNewKey] floatValue];
     NSLog(@"top inset is %f",topInset);
+
+    if (topInset <= self.pager.segmentMiniTopInset) {
+        self.pager.headerView.imageView.image = self.blurImage;
+    }else{
+        self.pager.headerView.imageView.image = self.defaultImage;
+    }
 }
 
 - (void)didReceiveMemoryWarning {
