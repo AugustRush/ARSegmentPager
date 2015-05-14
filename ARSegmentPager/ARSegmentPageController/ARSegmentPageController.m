@@ -31,11 +31,7 @@ const void* _ARSEGMENTPAGE_CURRNTPAGE_SCROLLVIEWOFFSET = &_ARSEGMENTPAGE_CURRNTP
     self = [super init];
     if (self) {
         NSAssert(controller != nil, @"the first controller must not be nil!");
-        self.headerHeight = 200;
-        self.segmentHeight = 44;
-        self.segmentToInset = 200;
-        self.segmentMiniTopInset = 0;
-        self.controllers = [NSMutableArray array];
+        [self _setUp];
         UIViewController<ARSegmentControllerDelegate> *eachController;
         va_list argumentList;
         if (controller)
@@ -52,11 +48,37 @@ const void* _ARSEGMENTPAGE_CURRNTPAGE_SCROLLVIEWOFFSET = &_ARSEGMENTPAGE_CURRNTP
     return self;
 }
 
+-(id)initWithCoder:(NSCoder *)aDecoder
+{
+    self = [super initWithCoder:aDecoder];
+    if (self) {
+        [self _setUp];
+    }
+    return self;
+}
+
+-(instancetype)init
+{
+    self = [super init];
+    if (self) {
+        [self _setUp];
+    }
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
    
     [self _baseConfigs];
     [self _baseLayout];
+}
+
+#pragma mark - public methods
+
+-(void)setViewControllers:(NSArray *)viewControllers
+{
+    [self.controllers removeAllObjects];
+    [self.controllers addObjectsFromArray:viewControllers];
 }
 
 #pragma mark - override methods
@@ -67,6 +89,15 @@ const void* _ARSEGMENTPAGE_CURRNTPAGE_SCROLLVIEWOFFSET = &_ARSEGMENTPAGE_CURRNTP
 }
 
 #pragma mark - private methdos
+
+-(void)_setUp
+{
+    self.headerHeight = 200;
+    self.segmentHeight = 44;
+    self.segmentToInset = 200;
+    self.segmentMiniTopInset = 0;
+    self.controllers = [NSMutableArray array];
+}
 
 -(void)_baseConfigs
 {
@@ -87,7 +118,10 @@ const void* _ARSEGMENTPAGE_CURRNTPAGE_SCROLLVIEWOFFSET = &_ARSEGMENTPAGE_CURRNTP
     //all segment title and controllers
     [self.controllers enumerateObjectsUsingBlock:^(UIViewController<ARSegmentControllerDelegate> *controller, NSUInteger idx, BOOL *stop) {
         NSString *title = [controller segmentTitle];
-        [self.segmentView.segmentControl insertSegmentWithTitle:title atIndex:idx animated:NO];
+        
+        [self.segmentView.segmentControl insertSegmentWithTitle:title
+                                                        atIndex:idx
+                                                       animated:NO];
     }];
     
     //defaut at index 0
