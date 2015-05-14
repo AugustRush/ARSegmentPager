@@ -241,6 +241,10 @@ const void* _ARSEGMENTPAGE_CURRNTPAGE_SCROLLVIEWOFFSET = &_ARSEGMENTPAGE_CURRNTP
         CGFloat offsetY = offset.y + self.segmentHeight;
         if (offsetY < -self.segmentMiniTopInset) {
             self.headerHeightConstraint.constant = -offsetY;
+            if (self.freezenHeaderWhenReachMaxHeaderHeight &&
+                offsetY < -self.headerHeight) {
+                self.headerHeightConstraint.constant = self.headerHeight;
+            }
             self.segmentToInset = -offsetY;
         }else{
             self.headerHeightConstraint.constant = self.segmentMiniTopInset;

@@ -38,7 +38,7 @@
     
     ARSegmentPageController *pager = [[ARSegmentPageController alloc] init];
     [pager setViewControllers:@[table,collectionView,table1]];
-    
+    pager.freezenHeaderWhenReachMaxHeaderHeight = YES;
     pager.segmentMiniTopInset = 64;
     self.pager = pager;
     
@@ -55,7 +55,7 @@
 -(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
 {
     CGFloat topInset = [change[NSKeyValueChangeNewKey] floatValue];
-    NSLog(@"top inset is %f",topInset);
+//    NSLog(@"top inset is %f",topInset);
 
     if (topInset <= self.pager.segmentMiniTopInset) {
             self.pager.title = @"ARSegmentPager";

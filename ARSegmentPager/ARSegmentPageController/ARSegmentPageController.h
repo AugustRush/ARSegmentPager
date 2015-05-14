@@ -22,6 +22,8 @@
 
 @property (nonatomic, strong, readonly) UIView<ARSegmentPageControllerHeaderProtocol> *headerView;
 
+@property (nonatomic, assign) BOOL freezenHeaderWhenReachMaxHeaderHeight;
+
 -(instancetype)initWithControllers:(UIViewController<ARSegmentControllerDelegate> *)controller,... NS_REQUIRES_NIL_TERMINATION;
 
 -(void)setViewControllers:(NSArray *)viewControllers;
