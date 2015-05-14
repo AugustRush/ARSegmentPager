@@ -22,7 +22,9 @@
 
 @property (nonatomic, strong, readonly) UIView<ARSegmentPageControllerHeaderProtocol> *headerView;
 
--(instancetype)initWithControllers:(UIViewController<ARSegmentControllerDelegate> *)controller,... NS_DESIGNATED_INITIALIZER NS_REQUIRES_NIL_TERMINATION;
+-(instancetype)initWithControllers:(UIViewController<ARSegmentControllerDelegate> *)controller,... NS_REQUIRES_NIL_TERMINATION;
+
+-(void)setViewControllers:(NSArray *)viewControllers;
 
 //override this method to custom your own header view
 -(UIView<ARSegmentPageControllerHeaderProtocol> *)customHeaderView;

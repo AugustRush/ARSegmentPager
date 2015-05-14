@@ -34,7 +34,11 @@
     CollectionViewController *collectionView = [[CollectionViewController alloc] initWithNibName:@"CollectionViewController" bundle:nil];
     
     TableViewController *table1 = [[TableViewController alloc] initWithNibName:@"TableViewController" bundle:nil];
-    ARSegmentPageController *pager = [[ARSegmentPageController alloc] initWithControllers:collectionView,table,table1,nil];
+//    ARSegmentPageController *pager = [[ARSegmentPageController alloc] initWithControllers:collectionView,table,table1,nil];
+    
+    ARSegmentPageController *pager = [[ARSegmentPageController alloc] init];
+    [pager setViewControllers:@[table,collectionView,table1]];
+    
     pager.segmentMiniTopInset = 64;
     self.pager = pager;
     
