@@ -12,8 +12,11 @@
 #import "CollectionViewController.h"
 #import "UIImage+ImageEffects.h"
 
+#import "CustomHeaderViewController.h"
+
 @interface ViewController ()<ARSegmentControllerDelegate>
 - (IBAction)presentPageController:(id)sender;
+- (IBAction)customHeader:(id)sender;
 
 @property (nonatomic, strong) ARSegmentPageController *pager;
 
@@ -81,4 +84,11 @@
 
     [self.navigationController pushViewController:self.pager animated:YES];
 }
+
+- (IBAction)customHeader:(id)sender {
+    CustomHeaderViewController *customHeader = [[CustomHeaderViewController alloc] init];
+    
+    [self.navigationController pushViewController:customHeader animated:YES];
+}
+
 @end

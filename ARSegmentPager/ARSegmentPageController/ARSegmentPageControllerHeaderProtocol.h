@@ -10,6 +10,6 @@
 
 @protocol ARSegmentPageControllerHeaderProtocol <NSObject>
 
-@property (nonatomic) UIImageView *imageView;
+@property UIImageView *imageView;
 
 @end

@@ -24,6 +24,9 @@
 		97C9BCE11AC6E47200C23EE5 /* CollectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 97C9BCDF1AC6E47200C23EE5 /* CollectionViewController.xib */; };
 		97C9E8EB1AFE3E9C00142F24 /* NavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 97C9E8EA1AFE3E9C00142F24 /* NavigationViewController.m */; };
 		97C9E8EE1AFE43BB00142F24 /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 97C9E8ED1AFE43BB00142F24 /* UIImage+ImageEffects.m */; };
+		97DFD1311B0C5CDE0048DCC1 /* CustomHeaderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 97DFD1301B0C5CDE0048DCC1 /* CustomHeaderViewController.m */; };
+		97DFD1341B0C5E3D0048DCC1 /* CustomHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 97DFD1331B0C5E3D0048DCC1 /* CustomHeader.m */; };
+		97DFD1361B0C5E500048DCC1 /* CustomHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 97DFD1351B0C5E500048DCC1 /* CustomHeader.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +71,11 @@
 		97C9E8EA1AFE3E9C00142F24 /* NavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationViewController.m; sourceTree = "<group>"; };
 		97C9E8EC1AFE43BB00142F24 /* UIImage+ImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageEffects.h"; sourceTree = "<group>"; };
 		97C9E8ED1AFE43BB00142F24 /* UIImage+ImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageEffects.m"; sourceTree = "<group>"; };
+		97DFD12F1B0C5CDE0048DCC1 /* CustomHeaderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomHeaderViewController.h; sourceTree = "<group>"; };
+		97DFD1301B0C5CDE0048DCC1 /* CustomHeaderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomHeaderViewController.m; sourceTree = "<group>"; };
+		97DFD1321B0C5E3D0048DCC1 /* CustomHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomHeader.h; sourceTree = "<group>"; };
+		97DFD1331B0C5E3D0048DCC1 /* CustomHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomHeader.m; sourceTree = "<group>"; };
+		97DFD1351B0C5E500048DCC1 /* CustomHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomHeader.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +136,11 @@
 				97C9BCA91AC6B9DA00C23EE5 /* AppDelegate.m */,
 				97C9BCAB1AC6B9DA00C23EE5 /* ViewController.h */,
 				97C9BCAC1AC6B9DA00C23EE5 /* ViewController.m */,
+				97DFD12F1B0C5CDE0048DCC1 /* CustomHeaderViewController.h */,
+				97DFD1301B0C5CDE0048DCC1 /* CustomHeaderViewController.m */,
+				97DFD1321B0C5E3D0048DCC1 /* CustomHeader.h */,
+				97DFD1331B0C5E3D0048DCC1 /* CustomHeader.m */,
+				97DFD1351B0C5E500048DCC1 /* CustomHeader.xib */,
 				97C9BCAE1AC6B9DA00C23EE5 /* Main.storyboard */,
 				97C9E8EC1AFE43BB00142F24 /* UIImage+ImageEffects.h */,
 				97C9E8ED1AFE43BB00142F24 /* UIImage+ImageEffects.m */,
@@ -257,6 +270,7 @@
 				97C9BCE11AC6E47200C23EE5 /* CollectionViewController.xib in Resources */,
 				97C9BCB51AC6B9DA00C23EE5 /* LaunchScreen.xib in Resources */,
 				971CD7891AC7E2BE00963626 /* listdownload.jpg in Resources */,
+				97DFD1361B0C5E500048DCC1 /* CustomHeader.xib in Resources */,
 				97C9BCB21AC6B9DA00C23EE5 /* Images.xcassets in Resources */,
 				97C9BCDC1AC6E44E00C23EE5 /* TableViewController.xib in Resources */,
 			);
@@ -277,6 +291,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				97C9BCE01AC6E47200C23EE5 /* CollectionViewController.m in Sources */,
+				97DFD1341B0C5E3D0048DCC1 /* CustomHeader.m in Sources */,
 				973EC05B1AC93F59000544BA /* ARSegmentPageHeader.m in Sources */,
 				97C9BCAD1AC6B9DA00C23EE5 /* ViewController.m in Sources */,
 				973EC05C1AC93F59000544BA /* ARSegmentView.m in Sources */,
@@ -286,6 +301,7 @@
 				97C9BCDB1AC6E44E00C23EE5 /* TableViewController.m in Sources */,
 				973EC05A1AC93F59000544BA /* ARSegmentPageController.m in Sources */,
 				97C9E8EB1AFE3E9C00142F24 /* NavigationViewController.m in Sources */,
+				97DFD1311B0C5CDE0048DCC1 /* CustomHeaderViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
