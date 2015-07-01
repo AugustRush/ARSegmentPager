@@ -248,7 +248,12 @@ const void* _ARSEGMENTPAGE_CURRNTPAGE_SCROLLVIEWOFFSET = &_ARSEGMENTPAGE_CURRNTP
         if (deltaOfOffsetY > 0) {
             // 当滑动是向上滑动时
             // 跟随移动的偏移量进行变化
-            self.headerHeightConstraint.constant -= deltaOfOffsetY;
+            // NOTE:直接相减有可能constant会变成负数，进而被系统强行移除，导致header悬停的位置错乱或者crash
+            if (self.headerHeightConstraint.constant - deltaOfOffsetY <= 0) {
+                self.headerHeightConstraint.constant = self.segmentMiniTopInset;
+            } else {
+                self.headerHeightConstraint.constant -= deltaOfOffsetY;
+            }
             // 如果到达顶部固定区域，那么不继续滑动
             if (self.headerHeightConstraint.constant <= self.segmentMiniTopInset) {
                 self.headerHeightConstraint.constant = self.segmentMiniTopInset;
