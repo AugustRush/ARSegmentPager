@@ -41,7 +41,6 @@
     
     ARSegmentPageController *pager = [[ARSegmentPageController alloc] init];
     [pager setViewControllers:@[table,collectionView,table1]];
-    pager.freezenHeaderWhenReachMaxHeaderHeight = YES;
     pager.segmentMiniTopInset = 64;
     self.pager = pager;
     
