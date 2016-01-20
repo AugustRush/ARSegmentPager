@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ARSegmentPageController/ARSegmentPageControllerHeaderProtocol.h"
 
-@interface CustomHeader : UIView
+@interface CustomHeader : UIView<ARSegmentPageControllerHeaderProtocol>
 
-@property (weak, nonatomic) IBOutlet UIImageView *imageView;
+@property(weak, nonatomic) IBOutlet UIImageView *imageView;
 
 @end

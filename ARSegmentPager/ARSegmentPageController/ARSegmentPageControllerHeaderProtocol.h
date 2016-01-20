@@ -10,6 +10,6 @@
 
 @protocol ARSegmentPageControllerHeaderProtocol <NSObject>
 
-@property UIImageView *imageView;
+- (UIImageView *)backgroundImageView;
 
 @end

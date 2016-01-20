@@ -17,7 +17,6 @@
 		97C9BCB01AC6B9DA00C23EE5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97C9BCAE1AC6B9DA00C23EE5 /* Main.storyboard */; };
 		97C9BCB21AC6B9DA00C23EE5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 97C9BCB11AC6B9DA00C23EE5 /* Images.xcassets */; };
 		97C9BCB51AC6B9DA00C23EE5 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 97C9BCB31AC6B9DA00C23EE5 /* LaunchScreen.xib */; };
-		97C9BCC11AC6B9DA00C23EE5 /* ARSegmentPagerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 97C9BCC01AC6B9DA00C23EE5 /* ARSegmentPagerTests.m */; };
 		97C9BCDB1AC6E44E00C23EE5 /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 97C9BCD91AC6E44E00C23EE5 /* TableViewController.m */; };
 		97C9BCDC1AC6E44E00C23EE5 /* TableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 97C9BCDA1AC6E44E00C23EE5 /* TableViewController.xib */; };
 		97C9BCE01AC6E47200C23EE5 /* CollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 97C9BCDE1AC6E47200C23EE5 /* CollectionViewController.m */; };
@@ -28,16 +27,6 @@
 		97DFD1341B0C5E3D0048DCC1 /* CustomHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 97DFD1331B0C5E3D0048DCC1 /* CustomHeader.m */; };
 		97DFD1361B0C5E500048DCC1 /* CustomHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 97DFD1351B0C5E500048DCC1 /* CustomHeader.xib */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		97C9BCBB1AC6B9DA00C23EE5 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 97C9BC991AC6B9DA00C23EE5 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 97C9BCA01AC6B9DA00C23EE5;
-			remoteInfo = ARSegmentPager;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		971CD7881AC7E2BE00963626 /* listdownload.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = listdownload.jpg; sourceTree = "<group>"; };
@@ -58,7 +47,6 @@
 		97C9BCAF1AC6B9DA00C23EE5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		97C9BCB11AC6B9DA00C23EE5 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		97C9BCB41AC6B9DA00C23EE5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		97C9BCBA1AC6B9DA00C23EE5 /* ARSegmentPagerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ARSegmentPagerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		97C9BCBF1AC6B9DA00C23EE5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		97C9BCC01AC6B9DA00C23EE5 /* ARSegmentPagerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ARSegmentPagerTests.m; sourceTree = "<group>"; };
 		97C9BCD81AC6E44E00C23EE5 /* TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
@@ -71,6 +59,7 @@
 		97C9E8EA1AFE3E9C00142F24 /* NavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationViewController.m; sourceTree = "<group>"; };
 		97C9E8EC1AFE43BB00142F24 /* UIImage+ImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageEffects.h"; sourceTree = "<group>"; };
 		97C9E8ED1AFE43BB00142F24 /* UIImage+ImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageEffects.m"; sourceTree = "<group>"; };
+		97D8AD7E1C4F72DC004BAA69 /* ARSegmentPageControllerHeaderProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ARSegmentPageControllerHeaderProtocol.h; sourceTree = "<group>"; };
 		97DFD12F1B0C5CDE0048DCC1 /* CustomHeaderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomHeaderViewController.h; sourceTree = "<group>"; };
 		97DFD1301B0C5CDE0048DCC1 /* CustomHeaderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomHeaderViewController.m; sourceTree = "<group>"; };
 		97DFD1321B0C5E3D0048DCC1 /* CustomHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomHeader.h; sourceTree = "<group>"; };
@@ -86,19 +75,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		97C9BCB71AC6B9DA00C23EE5 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		973EC0521AC93F59000544BA /* ARSegmentPageController */ = {
 			isa = PBXGroup;
 			children = (
+				97D8AD7E1C4F72DC004BAA69 /* ARSegmentPageControllerHeaderProtocol.h */,
 				973EC0531AC93F59000544BA /* ARSegmentControllerDelegate.h */,
 				973EC0541AC93F59000544BA /* ARSegmentPageController.h */,
 				973EC0551AC93F59000544BA /* ARSegmentPageController.m */,
@@ -123,7 +106,6 @@
 			isa = PBXGroup;
 			children = (
 				97C9BCA11AC6B9DA00C23EE5 /* ARSegmentPager.app */,
-				97C9BCBA1AC6B9DA00C23EE5 /* ARSegmentPagerTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -206,39 +188,17 @@
 			productReference = 97C9BCA11AC6B9DA00C23EE5 /* ARSegmentPager.app */;
 			productType = "com.apple.product-type.application";
 		};
-		97C9BCB91AC6B9DA00C23EE5 /* ARSegmentPagerTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 97C9BCC71AC6B9DA00C23EE5 /* Build configuration list for PBXNativeTarget "ARSegmentPagerTests" */;
-			buildPhases = (
-				97C9BCB61AC6B9DA00C23EE5 /* Sources */,
-				97C9BCB71AC6B9DA00C23EE5 /* Frameworks */,
-				97C9BCB81AC6B9DA00C23EE5 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				97C9BCBC1AC6B9DA00C23EE5 /* PBXTargetDependency */,
-			);
-			name = ARSegmentPagerTests;
-			productName = ARSegmentPagerTests;
-			productReference = 97C9BCBA1AC6B9DA00C23EE5 /* ARSegmentPagerTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		97C9BC991AC6B9DA00C23EE5 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0620;
+				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = August;
 				TargetAttributes = {
 					97C9BCA01AC6B9DA00C23EE5 = {
 						CreatedOnToolsVersion = 6.2;
-					};
-					97C9BCB91AC6B9DA00C23EE5 = {
-						CreatedOnToolsVersion = 6.2;
-						TestTargetID = 97C9BCA01AC6B9DA00C23EE5;
 					};
 				};
 			};
@@ -256,7 +216,6 @@
 			projectRoot = "";
 			targets = (
 				97C9BCA01AC6B9DA00C23EE5 /* ARSegmentPager */,
-				97C9BCB91AC6B9DA00C23EE5 /* ARSegmentPagerTests */,
 			);
 		};
 /* End PBXProject section */
@@ -273,13 +232,6 @@
 				97DFD1361B0C5E500048DCC1 /* CustomHeader.xib in Resources */,
 				97C9BCB21AC6B9DA00C23EE5 /* Images.xcassets in Resources */,
 				97C9BCDC1AC6E44E00C23EE5 /* TableViewController.xib in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		97C9BCB81AC6B9DA00C23EE5 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -305,23 +257,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		97C9BCB61AC6B9DA00C23EE5 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				97C9BCC11AC6B9DA00C23EE5 /* ARSegmentPagerTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		97C9BCBC1AC6B9DA00C23EE5 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 97C9BCA01AC6B9DA00C23EE5 /* ARSegmentPager */;
-			targetProxy = 97C9BCBB1AC6B9DA00C23EE5 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		97C9BCAE1AC6B9DA00C23EE5 /* Main.storyboard */ = {
@@ -363,6 +299,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -427,6 +364,7 @@
 				INFOPLIST_FILE = ARSegmentPager/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Airily.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -439,41 +377,8 @@
 				INFOPLIST_FILE = ARSegmentPager/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Airily.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
-		97C9BCC81AC6B9DA00C23EE5 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = ARSegmentPagerTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ARSegmentPager.app/ARSegmentPager";
-			};
-			name = Debug;
-		};
-		97C9BCC91AC6B9DA00C23EE5 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = ARSegmentPagerTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ARSegmentPager.app/ARSegmentPager";
 			};
 			name = Release;
 		};
@@ -494,15 +399,6 @@
 			buildConfigurations = (
 				97C9BCC51AC6B9DA00C23EE5 /* Debug */,
 				97C9BCC61AC6B9DA00C23EE5 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		97C9BCC71AC6B9DA00C23EE5 /* Build configuration list for PBXNativeTarget "ARSegmentPagerTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				97C9BCC81AC6B9DA00C23EE5 /* Debug */,
-				97C9BCC91AC6B9DA00C23EE5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

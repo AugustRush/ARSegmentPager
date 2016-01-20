@@ -11,6 +11,4 @@
 
 @interface ARSegmentPageHeader : UIView<ARSegmentPageControllerHeaderProtocol>
 
-@property (nonatomic, strong) UIImageView *imageView;
-
 @end

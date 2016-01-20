@@ -11,6 +11,7 @@
 @interface ARSegmentPageHeader ()
 
 @property (nonatomic, strong) NSLayoutConstraint *imageTopConstraint;
+@property (nonatomic, strong) UIImageView *imageView;
 
 @end
 
@@ -40,6 +41,10 @@
     [self addConstraint:self.imageTopConstraint];
     [self addConstraint:[NSLayoutConstraint constraintWithItem:self.imageView attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeBottom multiplier:1 constant:0]];
 
+}
+
+- (UIImageView *)backgroundImageView {
+    return _imageView;
 }
 
 -(UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event

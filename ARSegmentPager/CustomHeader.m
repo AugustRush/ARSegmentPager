@@ -15,4 +15,8 @@
 
 }
 
+- (UIImageView *)backgroundImageView {
+    return self.imageView;
+}
+
 @end

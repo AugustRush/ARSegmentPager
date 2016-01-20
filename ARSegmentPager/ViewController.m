@@ -57,14 +57,14 @@
 -(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
 {
     CGFloat topInset = [change[NSKeyValueChangeNewKey] floatValue];
-//    NSLog(@"top inset is %f",topInset);
 
+    UIImageView *imageView = [self.pager.headerView backgroundImageView];
     if (topInset <= self.pager.segmentMiniTopInset) {
             self.pager.title = @"ARSegmentPager";
-        self.pager.headerView.imageView.image = self.blurImage;
+        imageView.image = self.blurImage;
     }else{
-            self.pager.title = nil;
-        self.pager.headerView.imageView.image = self.defaultImage;
+        self.pager.title = nil;
+        imageView.image = self.defaultImage;
     }
 }
 
