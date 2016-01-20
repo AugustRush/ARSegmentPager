@@ -48,7 +48,7 @@ void *CusomHeaderInsetObserver = &CusomHeaderInsetObserver;
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    [self addObserver:self forKeyPath:@"segmentToInset" options:NSKeyValueObservingOptionNew context:CusomHeaderInsetObserver];
+    [self addObserver:self forKeyPath:@"segmentTopInset" options:NSKeyValueObservingOptionNew context:CusomHeaderInsetObserver];
 }
 
 
@@ -64,7 +64,7 @@ void *CusomHeaderInsetObserver = &CusomHeaderInsetObserver;
 
 -(void)dealloc
 {
-    [self removeObserver:self forKeyPath:@"segmentToInset"];
+    [self removeObserver:self forKeyPath:@"segmentTopInset"];
 }
 
 - (void)didReceiveMemoryWarning {

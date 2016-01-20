@@ -42,9 +42,10 @@
     ARSegmentPageController *pager = [[ARSegmentPageController alloc] init];
     [pager setViewControllers:@[table,collectionView,table1]];
     pager.segmentMiniTopInset = 64;
+    pager.freezenHeaderWhenReachMaxHeaderHeight = YES;
     self.pager = pager;
     
-    [self.pager addObserver:self forKeyPath:@"segmentToInset" options:NSKeyValueObservingOptionNew context:NULL];
+    [self.pager addObserver:self forKeyPath:@"segmentTopInset" options:NSKeyValueObservingOptionNew context:NULL];
     
 }
 
