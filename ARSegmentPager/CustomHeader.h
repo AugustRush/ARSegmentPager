@@ -12,5 +12,8 @@
 @interface CustomHeader : UIView<ARSegmentPageControllerHeaderProtocol>
 
 @property(weak, nonatomic) IBOutlet UIImageView *imageView;
+@property (weak, nonatomic) IBOutlet UIImageView *headImageView;
+
+- (void)updateHeadPhotoWithTopInset:(CGFloat)inset;
 
 @end

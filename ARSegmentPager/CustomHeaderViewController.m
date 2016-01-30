@@ -12,9 +12,11 @@
 #import "UIImage+ImageEffects.h"
 #import "CustomHeader.h"
 
-void *CusomHeaderInsetObserver = &CusomHeaderInsetObserver;
+void *CustomHeaderInsetObserver = &CustomHeaderInsetObserver;
 
 @interface CustomHeaderViewController ()
+
+@property (nonatomic, strong) CustomHeader *header;
 
 @end
 
@@ -39,26 +41,27 @@ void *CusomHeaderInsetObserver = &CusomHeaderInsetObserver;
 
 -(UIView<ARSegmentPageControllerHeaderProtocol> *)customHeaderView
 {
-    CustomHeader *view = [[[NSBundle mainBundle] loadNibNamed:@"CustomHeader" owner:nil options:nil] lastObject];
-    view.backgroundColor = [UIColor redColor];
-    return view;
+    if (_header == nil) {
+        _header = [[[NSBundle mainBundle] loadNibNamed:@"CustomHeader" owner:nil options:nil] lastObject];
+        _header.backgroundColor = [UIColor redColor];
+    }
+    return _header;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    [self addObserver:self forKeyPath:@"segmentTopInset" options:NSKeyValueObservingOptionNew context:CusomHeaderInsetObserver];
+    [self addObserver:self forKeyPath:@"segmentTopInset" options:NSKeyValueObservingOptionNew context:CustomHeaderInsetObserver];
 }
 
 
 -(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
 {
     [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
-    if (context == CusomHeaderInsetObserver) {
+    if (context == CustomHeaderInsetObserver) {
         CGFloat inset = [change[NSKeyValueChangeNewKey] floatValue];
-        NSLog(@"inset is %f",inset);
-        
+        [self.header updateHeadPhotoWithTopInset:inset];
     }
 }
 

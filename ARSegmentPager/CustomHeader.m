@@ -8,6 +8,14 @@
 
 #import "CustomHeader.h"
 
+@interface CustomHeader ()
+
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *bottomConstraint;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *widthConstraint;
+
+
+@end
+
 @implementation CustomHeader
 
 -(void)awakeFromNib
@@ -17,6 +25,12 @@
 
 - (UIImageView *)backgroundImageView {
     return self.imageView;
+}
+
+- (void)updateHeadPhotoWithTopInset:(CGFloat)inset {
+    CGFloat ratio = (inset - 64)/200.0;
+    self.bottomConstraint.constant = ratio * 30 + 10;
+    self.widthConstraint.constant = 30 + ratio * 50;
 }
 
 @end
