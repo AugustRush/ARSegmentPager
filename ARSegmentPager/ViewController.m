@@ -37,12 +37,11 @@
     CollectionViewController *collectionView = [[CollectionViewController alloc] initWithNibName:@"CollectionViewController" bundle:nil];
     
     TableViewController *table1 = [[TableViewController alloc] initWithNibName:@"TableViewController" bundle:nil];
-//    ARSegmentPageController *pager = [[ARSegmentPageController alloc] initWithControllers:collectionView,table,table1,nil];
     
     ARSegmentPageController *pager = [[ARSegmentPageController alloc] init];
     [pager setViewControllers:@[table,collectionView,table1]];
     pager.segmentMiniTopInset = 64;
-    pager.freezenHeaderWhenReachMaxHeaderHeight = YES;
+    pager.freezenHeaderWhenReachMaxHeaderHeight = NO;
     self.pager = pager;
     
     [self.pager addObserver:self forKeyPath:@"segmentTopInset" options:NSKeyValueObservingOptionNew context:NULL];
