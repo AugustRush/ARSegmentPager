@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "ARSegmentPager"
-  s.version      = "1.1"
+  s.version      = "1.1.1"
   s.summary      = "segment tab controller with parallaxHeader"
 
   s.description  = <<-DESC
@@ -78,7 +78,7 @@ Pod::Spec.new do |s|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source       = { :git => "https://github.com/AugustRush/ARSegmentPager.git", :tag => "1.1" }
+  s.source       = { :git => "https://github.com/AugustRush/ARSegmentPager.git", :tag => "1.1.1" }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
