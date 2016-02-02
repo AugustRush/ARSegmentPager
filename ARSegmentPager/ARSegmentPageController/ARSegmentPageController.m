@@ -22,6 +22,7 @@ const void *_ARSEGMENTPAGE_CURRNTPAGE_SCROLLVIEWOFFSET =
 @property(nonatomic, weak)
     UIViewController<ARSegmentControllerDelegate> *currentDisplayController;
 @property(nonatomic, strong) NSLayoutConstraint *headerHeightConstraint;
+@property(nonatomic, strong) NSHashTable *hasShownControllers;
 
 @end
 
@@ -93,6 +94,7 @@ const void *_ARSEGMENTPAGE_CURRNTPAGE_SCROLLVIEWOFFSET =
   self.segmentTopInset = 200;
   self.segmentMiniTopInset = 0;
   self.controllers = [NSMutableArray array];
+  self.hasShownControllers = [NSHashTable weakObjectsHashTable];
 }
 
 - (void)_baseConfigs {
@@ -253,9 +255,12 @@ const void *_ARSEGMENTPAGE_CURRNTPAGE_SCROLLVIEWOFFSET =
     }
 
     [scrollView setContentInset:UIEdgeInsetsMake(topInset, 0, bottomInset, 0)];
-    // fixed first time don't show header view
-    //        [scrollView setContentOffset:CGPointMake(0,
-    //        -self.headerHeight-self.segmentHeight)];
+    //     fixed first time don't show header view
+    if (![self.hasShownControllers containsObject:pageController]) {
+      [self.hasShownControllers addObject:pageController];
+      [scrollView setContentOffset:CGPointMake(0, -self.headerHeight -
+                                                      self.segmentHeight)];
+    }
 
     [self.view addConstraint:[NSLayoutConstraint
                                  constraintWithItem:pageView
@@ -340,40 +345,59 @@ const void *_ARSEGMENTPAGE_CURRNTPAGE_SCROLLVIEWOFFSET =
                       ofObject:(id)object
                         change:(NSDictionary *)change
                        context:(void *)context {
-  if (context == _ARSEGMENTPAGE_CURRNTPAGE_SCROLLVIEWOFFSET) {
-      CGPoint offset = [change[NSKeyValueChangeNewKey] CGPointValue];
-      CGFloat offsetY = offset.y;
-      CGPoint oldOffset = [change[NSKeyValueChangeOldKey] CGPointValue];
-      CGFloat oldOffsetY = oldOffset.y;
-      CGFloat deltaOfOffsetY = offset.y - oldOffsetY;
-      
-      if (deltaOfOffsetY > 0 && [object isTracking]) {
-          // 当滑动是向上滑动时且用户触摸
-          
-          if (self.headerHeightConstraint.constant - deltaOfOffsetY <= 0) {
-              self.headerHeightConstraint.constant = self.segmentMiniTopInset;
-          } else {
-              self.headerHeightConstraint.constant -= deltaOfOffsetY;
-          }
-          // 如果到达顶部固定区域，那么不继续滑动
-          if (self.headerHeightConstraint.constant <= self.segmentMiniTopInset) {
-              self.headerHeightConstraint.constant = self.segmentMiniTopInset;
-          }
-      } else {
-          if (offsetY <= -(_segmentHeight + _segmentMiniTopInset)) {
-              CGFloat targetValue = -(offsetY + self.segmentHeight);
-              if (targetValue <= _segmentMiniTopInset) {
-                  targetValue = _segmentMiniTopInset;
-              }
-              if (_freezenHeaderWhenReachMaxHeaderHeight && targetValue > _headerHeight) {
-                  targetValue = _headerHeight;
-              }
-              self.headerHeightConstraint.constant = targetValue;
-          }
-      }
-      self.segmentTopInset = self.headerHeightConstraint.constant;
-
-  }
+    if (context == _ARSEGMENTPAGE_CURRNTPAGE_SCROLLVIEWOFFSET) {
+        CGPoint offset = [change[NSKeyValueChangeNewKey] CGPointValue];
+        CGFloat offsetY = offset.y;
+        CGPoint oldOffset = [change[NSKeyValueChangeOldKey] CGPointValue];
+        CGFloat oldOffsetY = oldOffset.y;
+        CGFloat deltaOfOffsetY = offset.y - oldOffsetY;
+        CGFloat offsetYWithSegment = offset.y + self.segmentHeight;
+        
+        if (deltaOfOffsetY > 0 && offsetY >= -(self.headerHeight + self.segmentHeight)) {
+            // 当滑动是向上滑动时且不是回弹
+            // 跟随移动的偏移量进行变化
+            // NOTE:直接相减有可能constant会变成负数，进而被系统强行移除，导致header悬停的位置错乱或者crash
+            if (self.headerHeightConstraint.constant - deltaOfOffsetY <= 0) {
+                self.headerHeightConstraint.constant = self.segmentMiniTopInset;
+            } else {
+                self.headerHeightConstraint.constant -= deltaOfOffsetY;
+            }
+            // 如果到达顶部固定区域，那么不继续滑动
+            if (self.headerHeightConstraint.constant <= self.segmentMiniTopInset) {
+                self.headerHeightConstraint.constant = self.segmentMiniTopInset;
+            }
+        } else {
+            // 当向下滑动时
+            // 如果列表已经滚动到屏幕上方
+            // 那么保持顶部栏在顶部
+            if (offsetY > 0) {
+                if (self.headerHeightConstraint.constant <= self.segmentMiniTopInset) {
+                    self.headerHeightConstraint.constant = self.segmentMiniTopInset;
+                }
+            } else {
+                // 如果列表顶部已经进入屏幕
+                // 如果顶部栏已经到达底部
+                if (self.headerHeightConstraint.constant >= self.headerHeight) {
+                    // 如果当前列表滚到了顶部栏的底部
+                    // 那么顶部栏继续跟随变大，否这保持不变
+                    if (-offsetYWithSegment > self.headerHeight && !_freezenHeaderWhenReachMaxHeaderHeight) {
+                        self.headerHeightConstraint.constant = -offsetYWithSegment;
+                    } else {
+                        self.headerHeightConstraint.constant = self.headerHeight;
+                    }
+                } else {
+                    // 在顶部拦未到达底部的情况下
+                    // 如果列表还没滚动到顶部栏底部，那么什么都不做
+                    // 如果已经到达顶部栏底部，那么顶部栏跟随滚动
+                    if (self.headerHeightConstraint.constant < -offsetYWithSegment) {
+                        self.headerHeightConstraint.constant -= deltaOfOffsetY;
+                    }
+                }
+            }
+        }
+        // 更新'segmentToInset'变量，让外部的 kvo 知道顶部栏位置的变化
+        self.segmentTopInset = self.headerHeightConstraint.constant;
+    }
 }
 
 #pragma mark - event methods
@@ -419,6 +443,7 @@ const void *_ARSEGMENTPAGE_CURRNTPAGE_SCROLLVIEWOFFSET =
   }
   // add obsever
   [self addObserverForPageController:self.currentDisplayController];
+  [scrollView setContentOffset:scrollView.contentOffset];
 }
 
 #pragma mark - manage memory methods

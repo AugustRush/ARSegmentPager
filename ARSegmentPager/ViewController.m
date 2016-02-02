@@ -32,20 +32,6 @@
     
     self.defaultImage = [UIImage imageNamed:@"listdownload.jpg"];
     self.blurImage = [[UIImage imageNamed:@"listdownload.jpg"] applyDarkEffect];
-    
-    TableViewController *table = [[TableViewController alloc] initWithNibName:@"TableViewController" bundle:nil];
-    CollectionViewController *collectionView = [[CollectionViewController alloc] initWithNibName:@"CollectionViewController" bundle:nil];
-    
-    TableViewController *table1 = [[TableViewController alloc] initWithNibName:@"TableViewController" bundle:nil];
-    
-    ARSegmentPageController *pager = [[ARSegmentPageController alloc] init];
-    [pager setViewControllers:@[table,collectionView,table1]];
-    pager.segmentMiniTopInset = 64;
-    pager.freezenHeaderWhenReachMaxHeaderHeight = NO;
-    self.pager = pager;
-    
-    [self.pager addObserver:self forKeyPath:@"segmentTopInset" options:NSKeyValueObservingOptionNew context:NULL];
-    
 }
 
 -(UIStatusBarStyle)preferredStatusBarStyle
@@ -80,6 +66,23 @@
 
 - (IBAction)presentPageController:(id)sender {
     
+    if (self.pager != nil) {
+        [self.pager removeObserver:self forKeyPath:@"segmentTopInset"];
+        self.pager = nil;
+    }
+    TableViewController *table = [[TableViewController alloc] initWithNibName:@"TableViewController" bundle:nil];
+    CollectionViewController *collectionView = [[CollectionViewController alloc] initWithNibName:@"CollectionViewController" bundle:nil];
+    
+    TableViewController *table1 = [[TableViewController alloc] initWithNibName:@"TableViewController" bundle:nil];
+    
+    ARSegmentPageController *pager = [[ARSegmentPageController alloc] init];
+    [pager setViewControllers:@[table,collectionView,table1]];
+    pager.segmentMiniTopInset = 64;
+    pager.freezenHeaderWhenReachMaxHeaderHeight = YES;
+    self.pager = pager;
+    
+    [self.pager addObserver:self forKeyPath:@"segmentTopInset" options:NSKeyValueObservingOptionNew context:NULL];
+
 
     [self.navigationController pushViewController:self.pager animated:YES];
 }
