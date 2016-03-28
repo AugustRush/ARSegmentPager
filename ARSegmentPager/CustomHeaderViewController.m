@@ -32,6 +32,7 @@ void *CustomHeaderInsetObserver = &CustomHeaderInsetObserver;
     if (self) {
         // your code
         self.segmentMiniTopInset = 64;
+        
     }
     
     return self;
