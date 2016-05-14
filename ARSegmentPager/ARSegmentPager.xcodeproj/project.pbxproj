@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		97C99E0F1CE6A6260068E910 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C99E0E1CE6A6260068E910 /* TableViewController.swift */; };
+		97C99E111CE6A6400068E910 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C99E101CE6A6400068E910 /* CollectionViewController.swift */; };
+		97C99E131CE6AE340068E910 /* CustomSegmentPager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C99E121CE6AE340068E910 /* CustomSegmentPager.swift */; };
 		97E357A91CE0C7BE00822889 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E357A81CE0C7BE00822889 /* AppDelegate.swift */; };
 		97E357AB1CE0C7BE00822889 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E357AA1CE0C7BE00822889 /* ViewController.swift */; };
 		97E357AE1CE0C7BE00822889 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97E357AC1CE0C7BE00822889 /* Main.storyboard */; };
@@ -14,6 +17,8 @@
 		97E357B31CE0C7BE00822889 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97E357B11CE0C7BE00822889 /* LaunchScreen.storyboard */; };
 		97E357BE1CE0C7BE00822889 /* ARSegmentPagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E357BD1CE0C7BE00822889 /* ARSegmentPagerTests.swift */; };
 		97E357C91CE0C7BE00822889 /* ARSegmentPagerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E357C81CE0C7BE00822889 /* ARSegmentPagerUITests.swift */; };
+		97E357D81CE0C83500822889 /* ARSegmentPagerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E357D71CE0C83500822889 /* ARSegmentPagerController.swift */; };
+		97E357DA1CE0C8D300822889 /* ARSegmentPagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E357D91CE0C8D300822889 /* ARSegmentPagerProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +39,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		97C99E0E1CE6A6260068E910 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		97C99E101CE6A6400068E910 /* CollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
+		97C99E121CE6AE340068E910 /* CustomSegmentPager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomSegmentPager.swift; sourceTree = "<group>"; };
 		97E357A51CE0C7BE00822889 /* ARSegmentPager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ARSegmentPager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		97E357A81CE0C7BE00822889 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		97E357AA1CE0C7BE00822889 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +55,8 @@
 		97E357C41CE0C7BE00822889 /* ARSegmentPagerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ARSegmentPagerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		97E357C81CE0C7BE00822889 /* ARSegmentPagerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARSegmentPagerUITests.swift; sourceTree = "<group>"; };
 		97E357CA1CE0C7BE00822889 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		97E357D71CE0C83500822889 /* ARSegmentPagerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARSegmentPagerController.swift; sourceTree = "<group>"; };
+		97E357D91CE0C8D300822889 /* ARSegmentPagerProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARSegmentPagerProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +110,9 @@
 				97E357D61CE0C7E100822889 /* Sources */,
 				97E357A81CE0C7BE00822889 /* AppDelegate.swift */,
 				97E357AA1CE0C7BE00822889 /* ViewController.swift */,
+				97C99E121CE6AE340068E910 /* CustomSegmentPager.swift */,
+				97C99E0E1CE6A6260068E910 /* TableViewController.swift */,
+				97C99E101CE6A6400068E910 /* CollectionViewController.swift */,
 				97E357AC1CE0C7BE00822889 /* Main.storyboard */,
 				97E357AF1CE0C7BE00822889 /* Assets.xcassets */,
 				97E357B11CE0C7BE00822889 /* LaunchScreen.storyboard */,
@@ -129,6 +142,8 @@
 		97E357D61CE0C7E100822889 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				97E357D71CE0C83500822889 /* ARSegmentPagerController.swift */,
+				97E357D91CE0C8D300822889 /* ARSegmentPagerProtocol.swift */,
 			);
 			path = Sources;
 			sourceTree = SOURCE_ROOT;
@@ -264,8 +279,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				97C99E111CE6A6400068E910 /* CollectionViewController.swift in Sources */,
+				97C99E131CE6AE340068E910 /* CustomSegmentPager.swift in Sources */,
 				97E357AB1CE0C7BE00822889 /* ViewController.swift in Sources */,
 				97E357A91CE0C7BE00822889 /* AppDelegate.swift in Sources */,
+				97E357DA1CE0C8D300822889 /* ARSegmentPagerProtocol.swift in Sources */,
+				97C99E0F1CE6A6260068E910 /* TableViewController.swift in Sources */,
+				97E357D81CE0C83500822889 /* ARSegmentPagerController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -492,6 +512,7 @@
 				97E357CF1CE0C7BE00822889 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		97E357D01CE0C7BE00822889 /* Build configuration list for PBXNativeTarget "ARSegmentPagerTests" */ = {
 			isa = XCConfigurationList;
@@ -500,6 +521,7 @@
 				97E357D21CE0C7BE00822889 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		97E357D31CE0C7BE00822889 /* Build configuration list for PBXNativeTarget "ARSegmentPagerUITests" */ = {
 			isa = XCConfigurationList;
@@ -508,6 +530,7 @@
 				97E357D51CE0C7BE00822889 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
