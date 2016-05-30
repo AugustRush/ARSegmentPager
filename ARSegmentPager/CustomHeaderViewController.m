@@ -32,7 +32,7 @@ void *CustomHeaderInsetObserver = &CustomHeaderInsetObserver;
     if (self) {
         // your code
         self.segmentMiniTopInset = 64;
-        
+        self.headerHeight = 200;
     }
     
     return self;
