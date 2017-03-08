@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "D47E4A01B8FB49C5225B23FB16F17B9F80155034",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "634C8679BA6FD1D8B7630901D01B11963760FEFB" : 9223372036854775807,
+    "D47E4A01B8FB49C5225B23FB16F17B9F80155034" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "01F8B37B-F20C-4843-B2E2-348ABE690DBE",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "634C8679BA6FD1D8B7630901D01B11963760FEFB" : "EasyLayout-Swift\/",
+    "D47E4A01B8FB49C5225B23FB16F17B9F80155034" : "ARSegmentPager\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "ARSegmentPager",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "ARSegmentPager\/ARSegmentPager.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/AugustRush\/EasyLayout-Swift.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "634C8679BA6FD1D8B7630901D01B11963760FEFB"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/AugustRush\/ARSegmentPager.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "D47E4A01B8FB49C5225B23FB16F17B9F80155034"
+    }
+  ]
+}

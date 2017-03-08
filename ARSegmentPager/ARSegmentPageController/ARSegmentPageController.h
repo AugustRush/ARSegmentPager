@@ -11,6 +11,7 @@
 #import "ARSegmentPageHeader.h"
 #import <UIKit/UIKit.h>
 
+@class ARSegmentView;
 @interface ARSegmentPageController : UIViewController
 
 @property(nonatomic, assign) CGFloat segmentHeight; // should be greater than 0
@@ -19,10 +20,10 @@
     CGFloat segmentMiniTopInset; // should be equal or greater than 0
 @property(nonatomic, assign, readonly) CGFloat segmentTopInset;
 @property(nonatomic, assign) BOOL freezenHeaderWhenReachMaxHeaderHeight;
-
+//readonly properties
 @property(nonatomic, weak, readonly)
     UIViewController<ARSegmentControllerDelegate> *currentDisplayController;
-
+@property(nonatomic, strong, readonly) ARSegmentView *segmentView;
 @property(nonatomic, strong, readonly)
     UIView<ARSegmentPageControllerHeaderProtocol> *headerView;
 

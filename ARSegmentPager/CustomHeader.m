@@ -20,7 +20,7 @@
 
 -(void)awakeFromNib
 {
-
+    [super awakeFromNib];
 }
 
 - (UIImageView *)backgroundImageView {
