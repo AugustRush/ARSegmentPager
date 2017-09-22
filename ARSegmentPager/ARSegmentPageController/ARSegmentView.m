@@ -25,8 +25,9 @@
 #pragma mark - private methods
 
 - (void)_baseConfigs {
-  self.translucent = NO;
 
+    self.backgroundColor = [UIColor colorWithRed:244/255.0 green:244/255.0 blue:244/255.0 alpha:1.0];
+    
   _segmentControl = [[UISegmentedControl alloc] init];
   _segmentControl.selectedSegmentIndex = 0;
   [self addSubview:self.segmentControl];

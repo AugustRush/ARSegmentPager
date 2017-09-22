@@ -253,6 +253,10 @@ const void *_ARSEGMENTPAGE_CURRNTPAGE_SCROLLVIEWINSET =
   if (scrollView) {
     scrollView.alwaysBounceVertical = YES;
     _originalTopInset = self.headerHeight + self.segmentHeight;
+      //如果iOS的系统是11.0
+      if (@available(iOS 11.0, *)) {
+          scrollView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+      }
     // fixed bootom tabbar inset
     CGFloat bottomInset = 0;
     if (self.tabBarController.tabBar.hidden == NO) {

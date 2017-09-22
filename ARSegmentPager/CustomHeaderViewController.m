@@ -32,6 +32,9 @@ void *CustomHeaderInsetObserver = &CustomHeaderInsetObserver;
     if (self) {
         // your code
         self.segmentMiniTopInset = 64;
+        if (@available(iOS 11.0, *)) {
+            self.segmentMiniTopInset = 84;
+        }
         self.headerHeight = 200;
     }
     

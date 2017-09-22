@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ARSegmentView : UIToolbar
+@interface ARSegmentView : UIView
 
 @property (nonatomic, strong, readonly) UISegmentedControl *segmentControl;
 
